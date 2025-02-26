@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "make",
+        },
+        {
+            "label": "clean_and_build",
+            "type": "shell",
+            "command": "make clean; make",
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "mgba build/gb-game.gb &"
+        },
+        {
+            "label": "build_and_run",
+            "dependsOn": [
+                "build",
+                "run"
+            ],
+            "dependsOrder": "sequence"
+        }
+    ]
+}
